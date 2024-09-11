@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## WEEK 3
+
+<img width="1658" alt="Screenshot 2024-09-11 at 3 16 41 PM" src="https://github.com/user-attachments/assets/fc8a98ed-e067-4647-a8f7-4e49911180ec">
+<img width="589" alt="Screenshot 2024-09-11 at 3 17 04 PM" src="https://github.com/user-attachments/assets/4630580f-7dd8-4aff-8831-c09440cf82e7">
+- In order to have the PizzaEntity was giving issues within the interface due to type issues. To resolve this, I have created a seperate interface for PizzaEntity and used the SizePipe class for the sizes.
