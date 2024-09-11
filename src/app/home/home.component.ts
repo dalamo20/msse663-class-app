@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { PizzasService } from "../shared/services/PizzasService/pizzas.service";
 
 @Component({
     selector: 'app-home',
@@ -6,5 +7,8 @@ import { Component } from "@angular/core";
     styleUrls: ['./home.component.scss'],
   })
   export class HomeComponent {
-    title = 'home!';
+    title = 'home'
+    readonly pizzas$ = this.pizzasService.getPizzas();
+
+    constructor(private pizzasService: PizzasService) {}
   }
