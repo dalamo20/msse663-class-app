@@ -31,3 +31,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <img width="1658" alt="Screenshot 2024-09-11 at 3 16 41 PM" src="https://github.com/user-attachments/assets/fc8a98ed-e067-4647-a8f7-4e49911180ec">
 <img width="589" alt="Screenshot 2024-09-11 at 3 17 04 PM" src="https://github.com/user-attachments/assets/4630580f-7dd8-4aff-8831-c09440cf82e7">
 - In order to have the PizzaEntity was giving issues within the interface due to type issues. To resolve this, I have created a seperate interface for PizzaEntity and used the SizePipe class for the sizes.
+
+## WEEK 4
+
+<img width="1666" alt="Screenshot 2024-09-22 at 12 56 02 PM" src="https://github.com/user-attachments/assets/a0ffc4b7-4c3a-4d08-af0e-ee7a96357123">
+- Using Angular's FormBuilder to manage a dynamic list of pizzas, allowing users to create, update, and remove pizzas along with their toppings.
+- It calculates the total price of selected pizzas based on their sizes and toppings, updating in real-time as changes are made to the form.
