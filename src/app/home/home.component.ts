@@ -1,14 +1,13 @@
-import { Component } from "@angular/core";
-import { PizzasService } from "../shared/services/PizzasService/pizzas.service";
+import { Component } from '@angular/core';
+import { PizzasService } from '../shared/services/pizza.service';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-  })
-  export class HomeComponent {
-    title = 'home'
-    readonly pizzas$ = this.pizzasService.getPizzas();
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+})
+export class HomeComponent {
+  readonly pizzas$ = this.pizzasService.getPizzaPresets();
 
-    constructor(private pizzasService: PizzasService) {}
-  }
+  constructor(private pizzasService: PizzasService) {}
+}

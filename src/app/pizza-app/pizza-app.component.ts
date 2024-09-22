@@ -1,4 +1,21 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+import {
+  AbstractControl,
+  FormArray,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Pizza } from 'api/lib/api-interfaces';
+import { map, startWith } from 'rxjs';
+
+type PizzaPrice = {
+  [size: string]: {
+    base: number;
+    size: number;
+    toppings: number;
+  };
+};
 
 @Component({
   selector: 'app-pizza-app',
@@ -6,10 +23,54 @@ import { Component } from "@angular/core";
   styleUrls: ['./pizza-app.component.scss'],
 })
 export class PizzaAppComponent {
-  prices = {
-    small: { base: 9.99, size: 10 },
-    meduim: { base: 11.99, size: 12 },
-    large: { base: 13.99, size: 14 },
-    'x-large': { base: 15.99, size: 16 },
+  activePizza = 0;
+
+  prices: PizzaPrice = {
+    small: { base: 9.99, size: 10, toppings: 0.69 },
+    medium: { base: 11.99, size: 12, toppings: 0.99 },
+    large: { base: 13.99, size: 14, toppings: 1.29 },
+    'x-large': { base: 15.99, size: 16, toppings: 1.59 },
   };
+
+  pizzaForm = this.fb.group({
+    pizzas: this.fb.array([this.createPizza()]),
+  });
+
+  get pizzas(): FormArray {
+    return this.pizzaForm.get('pizzas') as FormArray;
+  }
+
+  total$ = this.pizzas.valueChanges.pipe(
+    startWith(this.calculateTotal(this.pizzas.value)),
+    map(() => this.calculateTotal(this.pizzas.value))
+  );
+
+  constructor(private fb: FormBuilder) {}
+
+  createPizza() {
+    return this.fb.group({
+      size: ['small', Validators.required],
+      toppings: [[]],
+    });
+  }
+
+  addPizza() {
+    this.pizzas.push(this.createPizza());
+  }
+
+  removePizza(index: number) {
+    this.pizzas.removeAt(index);
+  }
+
+  togglePizza(index: number) {
+    this.activePizza = index;
+  }
+
+  calculateTotal(value: Pizza[]): string {
+    const price = value.reduce((acc: number, next: Pizza) => {
+      const price = this.prices[next.size];
+      return acc + price.base + price.toppings * next.toppings.length;
+    }, 0);
+    return price.toFixed(2);
+  }
 }
