@@ -5,7 +5,7 @@ import { PizzaService } from './src/pizzas.service';
 import { sequelize, connectDB } from './database'; 
 import * as dotenv from 'dotenv';
 
-dotenv.config({ path: '/Users/ypham/Desktop/danielProjects/msse663-class-app/.env' });
+dotenv.config({ path: '../.env' });
 
 console.log("Environment variables:", {
   MYSQL_DATABASE: process.env.MYSQL_DATABASE,
@@ -14,12 +14,18 @@ console.log("Environment variables:", {
   MYSQL_HOST: process.env.MYSQL_HOST
 });
 
+if (!process.env.MYSQL_USER || !process.env.MYSQL_DATABASE) {
+  console.error("Environment variables are not loaded correctly.");
+} else {
+  console.log("Environment variables loaded successfully.");
+}
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 connectDB();
 
-sequelize.sync().then(() => {
+sequelize.sync({ force: true }).then(() => {
   console.log('Models synchronized with the database.');
 });
 

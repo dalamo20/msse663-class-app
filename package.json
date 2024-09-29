@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev": "concurrently \"npm run start --prefix api\" \"ng serve --open\""
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "@types/morgan": "^1.9.9",
     "@types/sequelize": "^4.28.20",
     "@types/uuid": "^10.0.0",
+    "concurrently": "^9.0.1",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

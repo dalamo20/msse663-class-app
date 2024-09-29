@@ -39,3 +39,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - Using Angular's FormBuilder to manage a dynamic list of pizzas, allowing users to create, update, and remove pizzas along with their toppings.
 - It calculates the total price of selected pizzas based on their sizes and toppings, updating in real-time as changes are made to the form.
+
+## WEEK 5
+
+<img width="1251" alt="dbConnectionAngular" src="https://github.com/user-attachments/assets/6a32b382-1ded-45b9-9526-59cce3465038">
+
+- I added the .env file in the root directory with the MySQL credentials. Then I used dotenv.config() in app.ts of the api folder to load these variables for the database connection. Added console.logs in both app.ts & database.ts to ensure both files read the .env.
+- I initialized sequelize in database.ts by passing the env variables and authenticated the connection using sequelize.authenticate().
