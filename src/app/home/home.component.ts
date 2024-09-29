@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { PizzasService } from '../shared/services/pizza.service';
+import { Store } from '@ngrx/store';
+import { PizzasState, selectPizzas } from '../pizza-app/state';
+
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,7 @@ import { PizzasService } from '../shared/services/pizza.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  readonly pizzas$ = this.pizzasService.getPizzaPresets();
+  readonly pizzas$ = this.store.select(selectPizzas);
 
-  constructor(private pizzasService: PizzasService) {}
+  constructor(private store: Store<PizzasState>) {}
 }
