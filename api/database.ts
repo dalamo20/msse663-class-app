@@ -3,12 +3,12 @@ import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '../.env' });
 
-console.log('Database connection credentials before Sequelize init:', {
-  database: process.env.MYSQL_DATABASE,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  host: process.env.MYSQL_HOST
-});
+// console.log('Database connection credentials before Sequelize init:', {
+//   database: process.env.MYSQL_DATABASE,
+//   user: process.env.MYSQL_USER,
+//   password: process.env.MYSQL_PASSWORD,
+//   host: process.env.MYSQL_HOST
+// });
 
 export const sequelize = new Sequelize(
   process.env.MYSQL_DATABASE as string,  

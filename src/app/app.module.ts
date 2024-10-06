@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { PizzasEffects, reducer } from './pizza-app/state';
 import { PizzaService } from './shared/services/pizzas.service';
+import { FormatToppingsPipe } from './shared/pipes/toppings.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PizzaService } from './shared/services/pizzas.service';
     PizzaToppingsComponent,
     PizzaSummaryComponent,
     SizePipe,
+    FormatToppingsPipe,
   ],
   imports: [
     BrowserModule,

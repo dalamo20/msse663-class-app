@@ -7,12 +7,12 @@ import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '../.env' });
 
-console.log("Environment variables:", {
-  MYSQL_DATABASE: process.env.MYSQL_DATABASE,
-  MYSQL_USER: process.env.MYSQL_USER,
-  MYSQL_PASSWORD: process.env.MYSQL_PASSWORD,
-  MYSQL_HOST: process.env.MYSQL_HOST
-});
+// console.log("Environment variables:", {
+//   MYSQL_DATABASE: process.env.MYSQL_DATABASE,
+//   MYSQL_USER: process.env.MYSQL_USER,
+//   MYSQL_PASSWORD: process.env.MYSQL_PASSWORD,
+//   MYSQL_HOST: process.env.MYSQL_HOST
+// });
 
 if (!process.env.MYSQL_USER || !process.env.MYSQL_DATABASE) {
   console.error("Environment variables are not loaded correctly.");
