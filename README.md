@@ -46,3 +46,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - I added the .env file in the root directory with the MySQL credentials. Then I used dotenv.config() in app.ts of the api folder to load these variables for the database connection. Added console.logs in both app.ts & database.ts to ensure both files read the .env.
 - I initialized sequelize in database.ts by passing the env variables and authenticated the connection using sequelize.authenticate().
+
+## WEEK 7
+
+<img width="1671" alt="Screenshot 2024-10-10 at 5 41 31 PM" src="https://github.com/user-attachments/assets/7645c57a-b5a3-4fb8-be5a-04ac515039a6">
+<img width="1670" alt="Screenshot 2024-10-10 at 5 41 51 PM" src="https://github.com/user-attachments/assets/a1ced972-b0a5-4af5-8313-9bfdd8332ed7">
+
+- Hosting Pizza Creator web app via Firebase.
+- Create new pizzas, Add toppings, Update the pizza/toppings or remove, and view your total.
