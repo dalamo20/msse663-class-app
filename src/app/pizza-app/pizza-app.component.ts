@@ -63,29 +63,13 @@ export class PizzaAppComponent {
     this.activePizza = index;
   }
 
-  // calculateTotal(value: Pizza[]): string {
-  //   const price = value.reduce((acc: number, next: Pizza) => {
-  //     const price = this.prices[next.size];
-  //     return acc + price.base + price.toppings * next.toppings.length;
-  //   }, 0);
-  //   return price.toFixed(2);
-  // }
-  //Using calculateBasePrice & calculateTotal to demonstrate High-Order-Function & Currying
-
-  calculatePriceCurried = (size: string) => (toppings: string[]) => {
-    const basePrice = this.prices[size].base;
-    const toppingsPrice = toppings.length * this.prices[size].toppings;
-    return basePrice + toppingsPrice;
-  };
-  
   calculateTotal(value: Pizza[]): string {
-    const total = value.reduce((acc: number, next: Pizza) => {
-      const price = this.calculatePriceCurried(next.size)(next.toppings);
-      return acc + price;
+    const price = value.reduce((acc: number, next: Pizza) => {
+      const price = this.prices[next.size];
+      return acc + price.base + price.toppings * next.toppings.length;
     }, 0);
-    return total.toFixed(2);
+    return price.toFixed(2);
   }
-   
   
   onSubmit(event: any) {
     console.log('Submit event:', event);
