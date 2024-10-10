@@ -24,6 +24,7 @@
     "@ngrx/store-devtools": "^16.3.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
+    "firebase": "^10.14.1",
     "morgan": "^1.10.0",
     "mysql2": "^3.11.3",
     "rxjs": "~7.8.0",
