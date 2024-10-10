@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/msse663-class-app",
     "ignore": [
       "firebase.json",
       "**/.*",
