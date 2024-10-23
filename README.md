@@ -1,7 +1,7 @@
 # Pizza Creator
 
 ## Project Overview
-Pizza Creator is a web application built using Angular and TypeScript, designed as part of the MSSE 663 course to demonstrate frontend development concepts. While it does not actually process orders, it allows users to interact with the system by customizing pizzas. Users can add and remove toppings, modify pizza sizes, and view updated totals, providing a hands-on example of CRUD operations in a real-world scenario. The app is hosted on Firebase and showcases integration with NgRx for state management, as well as a responsive user interface.
+Pizza Creator is a web application built using Angular and TypeScript, designed as part of the MSSE 663 course to demonstrate frontend development concepts. While it does not actually process orders, it allows users to interact with the system by customizing pizzas. Users can add and remove toppings, modify pizza sizes, and view updated totals, providing a hands-on example of CRUD operations in a real-world scenario. The app is hosted on Firebase and showcases integration with NgRx for state management, as well as a responsive user interface. Final code in Week7 branch.
 
 ## Features
 - Add/Remove Toppings: Users can select their desired toppings for each pizza and update their choices dynamically.
